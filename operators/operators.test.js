@@ -5,6 +5,8 @@ import {
 
 const test = QUnit.test;
 
+QUnit.module('operators');
+
 test('adds two numbers', (expect) => {
     //Arrange
     // Set up your arguments and expectations
@@ -12,7 +14,7 @@ test('adds two numbers', (expect) => {
     const y = 5;
     const expected = 7;
 
-    //Act 
+    //Act
     // Call the function you're testing and set the result to a const
     const actual = add(x, y);
 
