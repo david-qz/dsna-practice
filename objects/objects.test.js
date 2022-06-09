@@ -1,6 +1,7 @@
 import {
     makePet,
     formatWork,
+    reverseFormatWork,
 } from './objects.js';
 
 const test = QUnit.test;
@@ -35,5 +36,22 @@ test('formatWork() data formatter', expect => {
     expect.deepEqual(actual, {
         work: 'war of the worlds',
         writer: 'h.g. wells',
+    });
+});
+
+test('reverseFormatWork() data re-formatter', expect => {
+    const actual = reverseFormatWork({
+        work: 'war of the worlds',
+        writer: 'h.g. wells'
+    });
+
+    expect.deepEqual(actual, {
+        author: {
+            last: 'wells',
+            first: 'h.g.',
+        },
+        book: {
+            title: 'war of the worlds',
+        }
     });
 });
